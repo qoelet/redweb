@@ -46,7 +46,12 @@
 
 <h2>Redis Dashboard</h2>
 <hr />
-
+%if current !='':
+<p>Currently you're working on,
+%end
+%for key in current:
+<p>{{key}} : <strong>{{current[key]}}</strong></p>
+%end
 <p>Database Size: <strong>{{db_size}}</strong> Keys</p>
 
 <form name="save" action="/save/" method="post">
